@@ -1,3 +1,4 @@
+import { AppBar, Toolbar, Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 function Header() {
@@ -9,11 +10,19 @@ function Header() {
   };
 
   return (
-    <header style={{ display: "flex", gap: 10, marginBottom: 20 }}>
-      <button>Quản lý sản phẩm</button>
-      <button>Quản lý người dùng</button>
-      <button onClick={logout}>Đăng xuất</button>
-    </header>
+    <AppBar position="static">
+      <Toolbar sx={{ display: "flex", gap: 2 }}>
+        <Typography variant="h6" sx={{ flexGrow: 1 }}>
+          Dashboard
+        </Typography>
+
+        <Button color="inherit">Quản lý sản phẩm</Button>
+        <Button color="inherit">Quản lý người dùng</Button>
+        <Button color="inherit" onClick={logout}>
+          Đăng xuất
+        </Button>
+      </Toolbar>
+    </AppBar>
   );
 }
 
